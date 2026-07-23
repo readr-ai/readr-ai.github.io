@@ -95,6 +95,21 @@ html = html.replace(
   '<img src="assets/hero.jpg" alt="" width="1600" height="1100" decoding="async" fetchpriority="high"'
 );
 
+// --- Waitlist layout: the export sizes the email input `width: min(280px, 100%)`
+// and leaves the form at fit-content inside a centred flex column. The `100%` has
+// nothing to resolve against during intrinsic sizing, so the form gets measured
+// against the placeholder text (~377px) rather than the input's real 280px — then
+// the input lays out at 280px, no longer fits beside the 157px button, and the
+// button wraps onto its own line. A definite width takes the form off intrinsic
+// sizing; the row still centres, and the ≤700px rule still stacks it.
+const waitlistRule =
+  '.waitlist { margin-top: 34px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }';
+if (!html.includes(waitlistRule)) die('.waitlist rule not found — has the design changed?');
+html = html.replace(
+  waitlistRule,
+  '.waitlist { margin-top: 34px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; width: 100%; }'
+);
+
 // --- The privacy notice is a page on this site; link it from the footer.
 html = html.replace(
   '      <a href="https://github.com/readr-ai/readr/blob/main/LICENSE">MIT License</a>\n',
