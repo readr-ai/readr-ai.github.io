@@ -263,6 +263,10 @@
   /* Sections */
   section.leaf { padding: 72px 0 16px; }
   .eyebrow { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 16px; }
+  .real-shots { display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; margin-top: 34px; }
+  .real-shots figure { margin: 0; flex: 1 1 240px; max-width: 300px; }
+  .real-shots img { display: block; width: 100%; height: auto; border-radius: 22px; border: 1px solid rgba(43,38,31,.12); box-shadow: 0 18px 40px rgba(43,38,31,.14); }
+  .real-shots figcaption { font-size: .82rem; color: var(--muted, #7a7265); text-align: center; margin-top: 10px; }
   section.leaf h2 { font-size: clamp(1.45rem, 3.2vw, 2.2rem); font-weight: 500; line-height: 1.2; letter-spacing: -0.01em; max-width: 24ch; font-variation-settings: 'opsz' 40; text-wrap: balance; }
   .lede { margin-top: 16px; max-width: 52ch; color: var(--ink-soft); font-size: 1.05rem; }
   .lede strong { color: var(--iris-ink); font-weight: 600; }
@@ -547,8 +551,10 @@
   <section class="leaf" id="model">
     <p class="eyebrow">Chapter III · Bring your own AI</p>
     <h2>Choose your own AI.</h2>
-    <p class="lede">Connect your Anthropic or OpenAI key, or run a local Ollama model and stay completely offline. There's no Readr account and no server in between — the app talks directly to the provider you choose.</p>
+    <p class="lede">Sign in with your ChatGPT or OpenRouter account, connect an Anthropic or OpenAI key, or run a local Ollama model and stay completely offline. There's no Readr account and no server in between — the app talks directly to the provider you choose.</p>
     <div class="chips">
+      <span class="fchip">ChatGPT sign-in</span>
+      <span class="fchip">OpenRouter sign-in</span>
       <span class="fchip">Anthropic key</span>
       <span class="fchip">OpenAI key</span>
       <span class="fchip ai">✦ Local Ollama, offline</span>
@@ -561,6 +567,26 @@
     <div><h3>No lock-in</h3><p>Every highlight and note exports as clean Markdown.</p></div>
     <div><h3>iPhone, iPad &amp; Mac</h3><p>The same library, highlights, and place in the book on every device.</p></div>
   </div>
+
+  <section class="leaf" id="real">
+    <p class="eyebrow">Chapter IV · No mockups</p>
+    <h2>This is the actual app.</h2>
+    <p class="lede">Untouched screenshots from the current build — Moby-Dick from Project Gutenberg, imported and read on an iPhone. The answer below is illustrative; the cited passages are the app's real retrieval over the whole book.</p>
+    <div class="real-shots">
+      <figure>
+        <img src="assets/screenshots/iphone-cover.jpg" alt="Readr on iPhone showing the 1892 cover of Moby-Dick rendered full page" loading="lazy" width="461" height="1000">
+        <figcaption>Covers render as full plates</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/screenshots/iphone-ask.jpg" alt="Ask the Book panel answering a question about Moby-Dick with cited chapters" loading="lazy" width="461" height="1000">
+        <figcaption>Ask, with citations into the book</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/screenshots/iphone-night.jpg" alt="Chapter one of Moby-Dick in night theme" loading="lazy" width="461" height="1000">
+        <figcaption>Night, sepia, and paper themes</figcaption>
+      </figure>
+    </div>
+  </section>
 
   <section class="close" id="waitlist">
     <h2>Fall back in love with reading.</h2>
