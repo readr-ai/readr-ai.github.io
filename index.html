@@ -201,6 +201,9 @@
   .waitlist input::placeholder { color: var(--ink-faint); }
   .btn { background: var(--iris); color: #fff; font-family: var(--sans); font-size: 0.9rem; font-weight: 600; padding: 12px 24px; border-radius: 99px; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
   .btn:hover { filter: brightness(1.08); }
+  .btn.ghost { background: transparent; color: var(--iris); border: 1.5px solid var(--iris); }
+  .btn.ghost:hover { filter: none; background: rgba(91,76,219,0.08); }
+  .cta-row { margin-top: 34px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
   .quiet { margin-top: 16px; font-style: italic; font-size: 0.95rem; color: var(--ink-warm); }
   @media (max-width: 700px) {
     .hero-top { padding-top: 48px; }
@@ -375,7 +378,7 @@
         <a href="#listen">Listen</a>
         <a href="#model">Your AI</a>
         <a href="https://github.com/readr-ai/readr">GitHub</a>
-        <a class="pill" href="#waitlist">Join the waitlist</a>
+        <a class="pill" href="#get">Get the app</a>
       </div>
     </nav>
 
@@ -383,12 +386,11 @@
       <p class="kicker">Readr — for the curious reader</p>
       <h1>For the love of reading.</h1>
       <p class="hero-sub">Ask questions as you read and get cited answers right in the margin. For once, the rabbithole leads back to the book.</p>
-      <form class="waitlist" action="https://docs.google.com/forms/d/e/1FAIpQLSeE4bfzCrOYfQBlqu_1VQu4oVg5S2VIpxCWmAbvZqi1rhQm5g/viewform" method="get" target="_blank" rel="noopener">
-        <input type="hidden" name="usp" value="pp_url">
-        <input type="email" name="entry.2046830010" required="" placeholder="you@example.com" aria-label="Email address">
-        <button class="btn" type="submit">Join the waitlist</button>
-      </form>
-      <p class="quiet">Free and open source. Out now for macOS; iPhone and iPad in beta.</p>
+      <p class="cta-row">
+        <a class="btn" href="https://apps.apple.com/app/id6789784856">Download on the App Store</a>
+        <a class="btn ghost" href="https://github.com/readr-ai/readr/releases/latest">Download for macOS</a>
+      </p>
+      <p class="quiet">Free and open source. Out now for iPhone, iPad, and Mac.</p>
     </header>
 
     <div class="demo-wrap">
@@ -603,16 +605,15 @@
     </div>
   </section>
 
-  <section class="close" id="waitlist">
+  <section class="close" id="get">
     <h2>Fall back in love with reading.</h2>
-    <p class="lede">Readr is free and open source, available now for macOS, with iPhone and iPad in beta. Join the waitlist and we'll email you when your invite is ready.</p>
-    <form class="waitlist" action="https://docs.google.com/forms/d/e/1FAIpQLSeE4bfzCrOYfQBlqu_1VQu4oVg5S2VIpxCWmAbvZqi1rhQm5g/viewform" method="get" target="_blank" rel="noopener">
-        <input type="hidden" name="usp" value="pp_url">
-      <input type="email" name="entry.2046830010" required="" placeholder="you@example.com" aria-label="Email address">
-      <button class="btn" type="submit">Join the waitlist</button>
-    </form>
-    <p class="fineprint">No newsletter, no spam. One email, then we all go back to reading.</p>
-    <p class="alt-links">Can't wait? <a href="https://github.com/readr-ai/readr/releases/latest">Download for macOS</a> · <a href="https://testflight.apple.com/join/U5dBEsSG">iPhone &amp; iPad beta on TestFlight</a> · <a href="https://github.com/readr-ai/readr">GitHub</a></p>
+    <p class="lede">Readr is free and open source — on the App Store for iPhone and iPad, and a signed, notarized download for your Mac. No account, no subscription. Your books, your keys.</p>
+    <p class="cta-row">
+      <a class="btn" href="https://apps.apple.com/app/id6789784856">Download on the App Store</a>
+      <a class="btn ghost" href="https://github.com/readr-ai/readr/releases/latest">Download for macOS</a>
+    </p>
+    <p class="fineprint">DRM-free EPUBs, PDFs and Markdown. Bring your own AI key — or none at all.</p>
+    <p class="alt-links"><a href="https://testflight.apple.com/join/U5dBEsSG">Ride the beta on TestFlight</a> · <a href="https://github.com/readr-ai/readr">GitHub</a> · <a href="privacy.html">Privacy</a></p>
   </section>
 
   <footer>
