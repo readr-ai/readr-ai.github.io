@@ -3,13 +3,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Readr — for the love of reading</title>
-<meta name="description" content="Readr is the ebook reader you can ask questions — and listen to. Ask in the margin, get a cited answer, or let it read the book aloud.">
+<meta name="description" content="Readr is the ebook reader you can ask questions, and listen to. Ask in the margin, get an answer grounded in the book, or let it read aloud. Free and open source for iPhone, iPad and Mac.">
 <link rel="icon" href="assets/icon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/icon.png">
 <link rel="canonical" href="https://readr-ai.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Readr — for the love of reading">
-<meta property="og:description" content="Readr is the ebook reader you can ask questions — and listen to. Ask in the margin, get a cited answer, or let it read the book aloud.">
+<meta property="og:description" content="Readr is the ebook reader you can ask questions, and listen to. Ask in the margin, get an answer grounded in the book, or let it read aloud. Free and open source for iPhone, iPad and Mac.">
 <meta property="og:url" content="https://readr-ai.github.io/">
 <meta property="og:image" content="https://readr-ai.github.io/assets/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -196,16 +196,16 @@
   .kicker { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 18px; }
   h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); font-weight: 500; line-height: 1.06; letter-spacing: -0.015em; font-variation-settings: 'opsz' 72; max-width: 15ch; text-wrap: balance; }
   .hero-sub { margin-top: 22px; max-width: 46ch; font-size: 1.12rem; color: var(--ink-warm); }
-  .waitlist { margin-top: 34px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; width: 100%; }
-  .waitlist input { font-family: var(--sans); font-size: 0.95rem; background: rgba(253,250,244,0.92); color: var(--ink); border: 1px solid #D8D0BC; border-radius: 99px; padding: 11px 21px; width: min(280px, 100%); }
-  .waitlist input::placeholder { color: var(--ink-faint); }
   .btn { background: var(--iris); color: #fff; font-family: var(--sans); font-size: 0.9rem; font-weight: 600; padding: 12px 24px; border-radius: 99px; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
   .btn:hover { filter: brightness(1.08); }
+  .btn.ghost { background: transparent; color: var(--iris); border: 1.5px solid var(--iris); }
+  .btn.ghost:hover { filter: none; background: rgba(91,76,219,0.08); }
+  .cta-row { margin-top: 34px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
   .quiet { margin-top: 16px; font-style: italic; font-size: 0.95rem; color: var(--ink-warm); }
   @media (max-width: 700px) {
     .hero-top { padding-top: 48px; }
-    .waitlist { flex-direction: column; width: 100%; }
-    .waitlist input { width: 100%; }
+    .cta-row { flex-direction: column; width: 100%; }
+    .cta-row .btn { width: 100%; text-align: center; }
   }
 
   /* Phone demo */
@@ -339,7 +339,6 @@
   .close { padding: 96px 0; text-align: center; }
   .close h2 { font-size: clamp(1.9rem, 5vw, 3rem); font-weight: 500; letter-spacing: -0.015em; font-variation-settings: 'opsz' 72; }
   .close .lede { margin: 16px auto 0; }
-  .close .waitlist input { background: var(--card); border-color: var(--rule); width: min(300px, 100%); }
   .fineprint { margin-top: 18px; font-family: var(--sans); font-size: 0.8rem; color: var(--ink-faint); }
   .alt-links { margin-top: 26px; font-family: var(--sans); font-size: 0.85rem; color: var(--ink-soft); }
   @media (max-width: 700px) { .close { padding: 56px 0; } }
@@ -375,20 +374,19 @@
         <a href="#listen">Listen</a>
         <a href="#model">Your AI</a>
         <a href="https://github.com/readr-ai/readr">GitHub</a>
-        <a class="pill" href="#waitlist">Join the waitlist</a>
+        <a class="pill" href="#get">Get the app</a>
       </div>
     </nav>
 
     <header class="hero-top">
       <p class="kicker">Readr — for the curious reader</p>
       <h1>For the love of reading.</h1>
-      <p class="hero-sub">Ask questions as you read and get answers right in the margin, grounded in the whole book. For once, the rabbit hole leads back to the book.</p>
-      <form class="waitlist" action="https://docs.google.com/forms/d/e/1FAIpQLSeE4bfzCrOYfQBlqu_1VQu4oVg5S2VIpxCWmAbvZqi1rhQm5g/viewform" method="get" target="_blank" rel="noopener">
-        <input type="hidden" name="usp" value="pp_url">
-        <input type="email" name="entry.2046830010" required="" placeholder="you@example.com" aria-label="Email address">
-        <button class="btn" type="submit">Join the waitlist</button>
-      </form>
-      <p class="quiet">Free and open source. Out now for macOS; iPhone and iPad in beta.</p>
+      <p class="hero-sub">Ask a question mid-page and the answer appears in the margin, drawn from the whole book. For once, the rabbit hole leads back to the book.</p>
+      <p class="cta-row">
+        <a class="btn" href="https://apps.apple.com/app/id6789784856">Download on the App Store</a>
+        <a class="btn ghost" href="https://github.com/readr-ai/readr/releases/latest">Download for macOS</a>
+      </p>
+      <p class="quiet">Free and open source. Out now for iPhone, iPad and Mac.</p>
     </header>
 
     <div class="demo-wrap">
@@ -447,7 +445,7 @@
               <span class="q" id="bookQuestion">What are try-works, actually?</span>
               <span class="send" aria-hidden="true">↑</span>
             </div>
-            <p class="ask-helper">Grounded in this book with citations — plus the model's wider knowledge.</p>
+            <p class="ask-helper">Grounded in this book, with citations. Plus what the model knows.</p>
             <div class="ask-answer">
               <p class="stream-p"><span class="glyph">✦ </span><span id="stream"></span><span class="caret" id="caret">▍</span></p>
               <div class="sources">
@@ -468,7 +466,7 @@
   <section class="leaf" id="curious">
     <p class="eyebrow">Chapter I · Ask the book</p>
     <h2>Ask the book anything, without leaving it.</h2>
-    <p class="lede">A question mid-chapter used to mean opening a browser. In Readr you just ask — the answer appears in the margin, with citations pointing back to the pages it came from.</p>
+    <p class="lede">A question mid-chapter used to mean putting the book down and opening a browser. In Readr you ask on the page. The answer lands in the margin, with citations back to the passages it came from.</p>
 
     <div class="bank">
       <div class="shot">
@@ -496,13 +494,13 @@
         </div>
       </div>
     </div>
-    <p class="lede" style="margin-top: 28px;">Answers are grounded in the book you're reading, but not limited to it — the AI brings in outside knowledge when your question calls for it. Readr runs on Mac and iPad too.</p>
+    <p class="lede" style="margin-top: 28px;">Answers start from the book you're reading, but they aren't fenced in by it. When a question needs outside knowledge, the model brings it.</p>
   </section>
 
   <section class="leaf" id="margins">
     <p class="eyebrow">Chapter II · Highlight, note, compose</p>
     <h2>Turn your highlights into something worth keeping.</h2>
-    <p class="lede">Highlight passages and jot down your thoughts as you read. When you're done, Readr gathers them into a draft article written in your voice — ready to edit, export, or keep for yourself. Try it below — tap <strong>✦ Compose article</strong> on the phone.</p>
+    <p class="lede">Highlight what strikes you and add a note when you have something to say. When you finish, Readr gathers all of it into a draft article built from your own highlights and notes, which you can edit and export as Markdown. Try it: tap <strong>✦ Compose article</strong> on the phone.</p>
 
     <div class="phone-row">
       <div class="phone small" aria-label="iPhone mockup: the Notes panel">
@@ -537,7 +535,7 @@
       </div>
 
       <div class="pane" id="articlePane">
-        <p class="ph-hint">Tap <strong style="margin: 0 4px;">✦ Compose article</strong> — your highlights and notes become a draft.</p>
+        <p class="ph-hint">Tap <strong style="margin: 0 4px;">✦ Compose article</strong> and your highlights and notes become a draft.</p>
         <div class="article-content">
           <p class="ctx">Your article · draft</p>
           <p class="article-title">Something I could point to</p>
@@ -552,7 +550,7 @@
   <section class="leaf" id="listen">
     <p class="eyebrow">Chapter III · Listen</p>
     <h2>Let the book read to you.</h2>
-    <p class="lede">Some evenings you want the book; some evenings your eyes are done. Press Listen and Readr reads from the page you're on — not the top of the chapter — turning pages to keep up with the voice. Put it down mid-sentence, open it tomorrow, and you're exactly where the voice left you, whether you pick it back up by reading or by listening.</p>
+    <p class="lede">Some evenings you want the book and your eyes are done. Press Listen and Readr reads from the page you're on, not the top of the chapter, turning pages to keep up with the voice. Stop mid-sentence, come back tomorrow, and you're exactly where the voice left off, whether you pick it up by reading or by listening.</p>
     <div class="chips">
       <span class="fchip">Sentence &amp; chapter skip</span>
       <span class="fchip">Speed, changed mid-sentence</span>
@@ -560,13 +558,13 @@
       <span class="fchip">Sleep timer that counts listening</span>
       <span class="fchip">Lock screen &amp; headphones</span>
     </div>
-    <p class="lede" style="margin-top: 28px;">The voice runs on your device. No account, no subscription — one ~104 MB download the first time, and listening starts instantly while it arrives. Unlike every cloud text-to-speech service, not one page of your book is uploaded to be read back to you. It is the one thing here that needs no provider at all.</p>
+    <p class="lede" style="margin-top: 28px;">The voice runs on your device. There's no account and no subscription, just a one-time download of about 104 MB, and an Apple voice reads to you while it arrives. Nothing from your book is sent to a server to be read back to you. It's the one feature here that needs no provider at all.</p>
   </section>
 
   <section class="leaf" id="model">
     <p class="eyebrow">Chapter IV · Bring your own AI</p>
     <h2>Choose your own AI.</h2>
-    <p class="lede">Sign in with your ChatGPT (Mac) or OpenRouter account, connect an Anthropic or OpenAI key — or, on the Mac, run a local Ollama model and stay completely offline. There's no Readr account and no server in between — the app talks directly to the provider you choose.</p>
+    <p class="lede">Sign in with your OpenRouter account, or with ChatGPT on the Mac. Paste an Anthropic or OpenAI key. Or run a local Ollama model on your Mac and stay offline entirely. There's no Readr account and no server in between; the app talks straight to the provider you pick.</p>
     <div class="chips">
       <span class="fchip">ChatGPT sign-in (Mac)</span>
       <span class="fchip">OpenRouter sign-in</span>
@@ -579,14 +577,14 @@
   <div class="trust">
     <div><h3>Private by design</h3><p>No telemetry, no accounts. Keys live in the Keychain.</p></div>
     <div><h3>Free &amp; open source</h3><p>MIT licensed. Signed, notarized, and auditable on GitHub.</p></div>
-    <div><h3>No lock-in</h3><p>Every highlight and note exports as clean Markdown.</p></div>
-    <div><h3>iPhone, iPad &amp; Mac</h3><p>The same reader, native on every screen — sidebar and page on iPad, two-page spreads on the Mac.</p></div>
+    <div><h3>No lock-in</h3><p>Every highlight and note exports as plain Markdown.</p></div>
+    <div><h3>iPhone, iPad &amp; Mac</h3><p>One reader, native on every screen. Sidebar and page on iPad, two-page spreads on the Mac.</p></div>
   </div>
 
   <section class="leaf" id="real">
-    <p class="eyebrow">Chapter V · No mockups</p>
-    <h2>This is the actual app.</h2>
-    <p class="lede">Untouched screenshots from the current build — Moby-Dick from Project Gutenberg, imported and read on an iPhone. The answer below is illustrative; the cited passages are the app's real retrieval over the whole book.</p>
+    <p class="eyebrow">Chapter V · On the phone</p>
+    <h2>Readr on an iPhone.</h2>
+    <p class="lede">Screenshots from the current build: Moby-Dick from Project Gutenberg, imported and read on an iPhone. The answer text was written for the shot; the cited passages are what the app actually found in the book.</p>
     <div class="real-shots">
       <figure>
         <img src="assets/screenshots/iphone-cover.jpg" alt="Readr on iPhone showing the 1892 cover of Moby-Dick rendered full page" loading="lazy" width="461" height="1000">
@@ -603,16 +601,15 @@
     </div>
   </section>
 
-  <section class="close" id="waitlist">
+  <section class="close" id="get">
     <h2>Fall back in love with reading.</h2>
-    <p class="lede">Readr is free and open source, available now for macOS, with iPhone and iPad in beta. Join the waitlist and we'll email you when your invite is ready.</p>
-    <form class="waitlist" action="https://docs.google.com/forms/d/e/1FAIpQLSeE4bfzCrOYfQBlqu_1VQu4oVg5S2VIpxCWmAbvZqi1rhQm5g/viewform" method="get" target="_blank" rel="noopener">
-        <input type="hidden" name="usp" value="pp_url">
-      <input type="email" name="entry.2046830010" required="" placeholder="you@example.com" aria-label="Email address">
-      <button class="btn" type="submit">Join the waitlist</button>
-    </form>
-    <p class="fineprint">No newsletter, no spam. One email, then we all go back to reading.</p>
-    <p class="alt-links">Can't wait? <a href="https://github.com/readr-ai/readr/releases/latest">Download for macOS</a> · <a href="https://testflight.apple.com/join/U5dBEsSG">iPhone &amp; iPad beta on TestFlight</a> · <a href="https://github.com/readr-ai/readr">GitHub</a></p>
+    <p class="lede">Readr is free and open source. It's on the App Store for iPhone and iPad, and a signed, notarized download for the Mac. No account, no subscription, nothing to sign up for.</p>
+    <p class="cta-row">
+      <a class="btn" href="https://apps.apple.com/app/id6789784856">Download on the App Store</a>
+      <a class="btn ghost" href="https://github.com/readr-ai/readr/releases/latest">Download for macOS</a>
+    </p>
+    <p class="fineprint">Reads DRM-free EPUBs, PDFs and Markdown. Bring your own AI key, or skip it and just read. The Mac build needs Apple silicon.</p>
+    <p class="alt-links"><a href="https://testflight.apple.com/join/U5dBEsSG">Beta builds on TestFlight</a> · <a href="https://github.com/readr-ai/readr">GitHub</a> · <a href="privacy.html">Privacy</a></p>
   </section>
 
   <footer>
