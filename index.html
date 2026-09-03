@@ -384,7 +384,7 @@
       <p class="hero-sub">Ask a question mid-page and the answer appears in the margin, drawn from the whole book. For once, the rabbit hole leads back to the book.</p>
       <p class="cta-row">
         <a class="btn" href="https://apps.apple.com/app/id6789784856">Download on the App Store</a>
-        <a class="btn ghost" href="https://github.com/readr-ai/readr/releases/latest">Download for macOS</a>
+        <a class="btn ghost" href="https://github.com/readr-ai/readr/releases/latest" data-mac-download>Download for macOS</a>
       </p>
       <p class="quiet">Free and open source. Out now for iPhone, iPad and Mac.</p>
     </header>
@@ -606,7 +606,7 @@
     <p class="lede">Readr is free and open source. It's on the App Store for iPhone and iPad, and a signed, notarized download for the Mac. No account, no subscription, nothing to sign up for.</p>
     <p class="cta-row">
       <a class="btn" href="https://apps.apple.com/app/id6789784856">Download on the App Store</a>
-      <a class="btn ghost" href="https://github.com/readr-ai/readr/releases/latest">Download for macOS</a>
+      <a class="btn ghost" href="https://github.com/readr-ai/readr/releases/latest" data-mac-download>Download for macOS</a>
     </p>
     <p class="fineprint">Reads DRM-free EPUBs, PDFs and Markdown. Bring your own AI key, or skip it and just read. The Mac build needs Apple silicon.</p>
     <p class="alt-links"><a href="https://testflight.apple.com/join/U5dBEsSG">Beta builds on TestFlight</a> · <a href="https://github.com/readr-ai/readr">GitHub</a> · <a href="privacy.html">Privacy</a></p>
@@ -624,6 +624,28 @@
 
 </div>
 
+<script>
+(function () {
+  // Point "Download for macOS" straight at the latest .dmg. Assets are named
+  // per version (Readr-macOS-vX.Y.Z.dmg), so there is no stable URL to hard-code;
+  // if the API call fails the buttons keep the releases page as their href.
+  var links = document.querySelectorAll('a[data-mac-download]');
+  if (!links.length || !window.fetch) return;
+  fetch('https://api.github.com/repos/readr-ai/readr/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (rel) {
+      if (!rel || !rel.assets) return;
+      var dmg = rel.assets.filter(function (a) { return /\.dmg$/i.test(a.name); })[0];
+      if (!dmg) return;
+      for (var i = 0; i < links.length; i++) {
+        links[i].href = dmg.browser_download_url;
+        links[i].setAttribute('download', '');
+        links[i].title = 'Readr ' + rel.tag_name + ' for macOS (Apple silicon)';
+      }
+    })
+    .catch(function () {});
+})();
+</script>
 <script>
 (function () {
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
